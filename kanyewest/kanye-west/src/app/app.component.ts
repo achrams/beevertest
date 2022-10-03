@@ -31,7 +31,9 @@ export class AppComponent implements OnInit{
   }
 
   addMyQuotes() {
-    this.myQuotes.push(this.myQuote)
+    let arr = this.myQuotes
+    arr.push(this.myQuote)
+    this.myQuotes = [...new Set(arr)]
     this.myQuote = ''
   }
 
