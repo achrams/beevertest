@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6 p-5 my-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <img src="../assets/kanye.jpeg" alt="kanye-west" class="w-50">
+        </div>
+      </div>
+      <div class="my-3">
+        <h2 class="text-center font-weight-bold">{{title}}</h2>
+        <h5 class="text-center">{{quote.quote}}</h5>
+      </div>
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-3">
+            <button class="btn btn-primary w-100" (click)="getQuote()">Get Quote</button>
+          </div>
+          <div class="col-lg-3">
+            <button class="btn btn-secondary w-100" (click)="addToFavourite(quote.quote)">Favourite</button>
+          </div>
+        </div>
+      </div>
+      <div class="container my-2">
+        <div class="row align-items-center justify-content-center">
+          <div *ngFor="let fav of favs">
+            <h5 class="text-center border p-2 rounded">"{{fav}}"</h5>
+          </div>
+        </div>
+      </div>
+      <div class="container my-3">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-8" style="border-top: 2px solid black;"></div>
+          <h3 class="text-center my-3">My Quotes</h3>
+          <div class="form-group">
+            <div class="row justify-content-center align-items-center">
+              <div class="col-lg-9 px-1">
+                <input type="text" class="form-control" name="myQuote" id="myQuote" [(ngModel)]="myQuote" placeholder="Input Text">
+              </div>
+              <div class="col-lg-2 px-1">
+                <button class="btn btn-secondary w-100" (click)="addMyQuotes()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-2">
+        <div class="row align-items-center justify-content-center">
+          <div *ngFor="let quo of myQuotes">
+            <h5 class="text-center border p-2 rounded">"{{quo}}"</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
